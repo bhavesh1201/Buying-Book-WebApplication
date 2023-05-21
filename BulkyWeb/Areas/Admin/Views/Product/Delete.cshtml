@@ -1,0 +1,65 @@
+﻿@model BulkyWeb.Models.Product
+
+<h2 class="h2 text-white"> Delete Product</h2>
+
+<form class="form-control form-group" asp-controller="Product" asp-action="Delete" method="post">
+
+  
+
+    <div class="form-row d-flex">
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="Title" class="form-control" disabled  />
+        </div>
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="Author" class="form-control" disabled  />
+        </div>
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="ISBN" class="form-control" disabled  />
+        </div>
+
+    </div>
+
+    <input asp-for="Description" class="form-control pt-4" disabled >
+
+    <div class="form-row d-flex pt-2 pb-2">
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="ListPrice" class="form-control" disabled  />
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price" class="form-control" disabled />
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price50" class="form-control" disabled />
+            
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price100" class="form-control " disabled placeholder="@Model.Price100" />
+           
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class=" col-6">
+            <input class="btn btn-outline-dark form-control"  type="submit" value="Delete" />
+
+        </div>
+        <div class="col-6">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary form-control">Back</a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</form>

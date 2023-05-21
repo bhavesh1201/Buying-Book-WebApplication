@@ -1,0 +1,44 @@
+﻿@model List<BulkyWeb.Models.Product>
+
+<div class="container d-flex justify-content-between">
+       <div class="row text-center">
+
+
+        <h2 class="h1 text-white"> All Products</h2>
+        </div>
+   
+    <div class="text-end w-50">
+        <a asp-controller="Product" asp-action="Create" class="btn btn-outline-primary">
+            <h2><i class="bi bi-plus-circle-fill text-white">  </i>Add Product </h2>
+        </a>
+        </div>
+
+    
+</div>
+
+
+
+
+<table id="tblData" class="table table-sm ">
+
+    <tr>
+        
+        <td>Title</td>
+        <td>Author</td>
+        <td>Category</td>
+        <td>ListPrice</td>
+        
+    
+        
+    </tr>
+    
+
+
+
+
+
+</table>
+
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}

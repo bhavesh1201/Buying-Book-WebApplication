@@ -1,0 +1,101 @@
+﻿@model BulkyWeb.Models.Product
+
+<h2 class="h2 text-white"> Edit Product</h2>
+
+<form class="form-control form-group" asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
+
+    <div class="container">
+        <img src="~/@Model.imageUrl"  class="img-thumbnail" width="100" />
+    </div>
+    <input asp-for="Id" hidden />
+    <input asp-for="imageUrl" hidden />
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-row d-flex">
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="Title" class="form-control" placeholder="Title" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="Author" class="form-control" placeholder="Author" />
+            <span asp-validation-for="Author"></span>
+        </div>
+        <div class="col-md-4 ps-2">
+
+            <input asp-for="ISBN" class="form-control" placeholder="ISBN" />
+            <span asp-validation-for="ISBN"></span>
+        </div>
+
+    </div>
+
+    <input asp-for="Description" class="form-control pt-4" placeholder="Description">
+    <span asp-validation-for="Description"></span>
+
+    <div class="form-row d-flex pt-2 pb-2">
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="ListPrice" class="form-control" placeholder="List Price" />
+            <span asp-validation-for="ListPrice"></span>
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price" class="form-control" placeholder="Price for 1-50" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price50" class="form-control" placeholder="Price for 50-100" />
+            <span asp-validation-for="  Price50"></span>
+        </div>
+        <div class="col-md-3 ps-2">
+
+            <input asp-for="Price100" class="form-control" placeholder="Price for 100+" />
+            <span asp-validation-for="Price100"></span>
+        </div>
+
+
+    </div>
+
+    <div class="form-row d-flex">
+        <div class="form-floating py-2 col-6">
+
+            <select asp-for="CategoryId" asp-items="@ViewBag.CategoryList" class="form-select shadow">
+                <option disabled selected>--Select Category--</option>
+            </select>
+
+            <span asp-validation-for="CategoryId"></span>
+        </div>
+        </div>
+
+    <div class=" py-2 col-12">
+
+        <input type="file" name="formFile" asp-for="imageUrl" class="form-control" placeholder="image url" />
+
+
+    </div>
+
+    <div class="row">
+        <div class=" col-6">
+            <input class="btn btn-outline-dark form-control" type="submit" value="Edit" />
+
+        </div>
+        <div class="col-6">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-primary form-control">Back</a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</form>
+
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+ }
